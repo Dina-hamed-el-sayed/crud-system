@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="css/all.min.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+    <title>crud system</title>
+</head>
+<body>
+<div class="container py-5">
+    <h1 class="mb-5 text-white text-center ">Product Manegement System</h1>
+<div class="w-75 mx-auto"> 
+    <div class="form-floating mb-3">
+        <input type="text"  required  oninput="validateInput(this)" class="form-control" id="productName" placeholder="product Name">
+        <div class="alert alert-danger d-none mt-2" role="alert">
+            <small>name should start with uppercase</small>
+          </div>
+        <label for="productName">Product Name:</label>
+        
+      </div>
+    <div class="form-floating mb-3">
+        <input type="number" required  oninput="validateInput(this)" class="form-control" id="productPrice" placeholder="product Price">
+        <div class="alert alert-danger d-none mt-2" role="alert">
+            <small>invalid price </small>
+          </div>
+        <label for="productPrice">Product Price:</label>
+        
+      </div>
+    <div class="form-floating mb-3">
+        <input list="categories" required   oninput="validateInput(this)" type="text" class="form-control" id="productCategory" placeholder="product Category"> 
+        <div class="alert alert-danger d-none mt-2" role="alert">
+            <small>select friom the list</small>
+          </div>
+        <label for="productCategory">Product Category:</label>
+       
+        <datalist id="categories">
+            <option value="Tv">
+            <option value="Mobile">
+            <option value="Laptop">
+            <option value="Screens">
+            <option value="Other">
+        
+        </datalist>
+ </div>
+     
+    <div class="form-floating mb-3">
+        <textarea  class="form-control" required oninput="validateInput(this)"id="productDesc" placeholder="product Descreption"></textarea>
+        <div class="alert alert-danger d-none mt-2 " role="alert">
+            <small>invalid descreption</small>
+          </div>
+        <label  for="productDesc">Product Description:</label>
+        
+
+      </div>
+
+      <div class="form-floating mb-3">
+        <input type="file" class="form-control" required    accept="images/*"       id="productImage" placeholder="product Image">
+        <label for="productImage">Product Image:</label>
+      </div>
+      <button id="addBtn"  onclick="addProduct()"  class="btn btn-primary"> add product</button>
+      <button id="updateBtn" onclick="updateProduct()"  class="btn btn-primary d-none"> update</button>
+
+      <div id="error-message" class="text-danger"></div>
+
+
+      <div class="my-4 w-50 mx-auto  input-content">
+  
+        <input  oninput="search(this.value)"  type="search" class="form-control" id="searchInput" placeholder="search" required>
+    </div>
+
+      
+</div>
+
+
+
+
+</div>
+
+<div class="container py-5">
+<div class="row gy-3" id="myData">
+
+
+</div>
+
+
+
+</div>
+
+ 
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
